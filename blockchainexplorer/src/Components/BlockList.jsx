@@ -5,14 +5,13 @@ function BlockList({ onSelectBlock }) {
   const [currentBlock, setCurrentBlock] = useState(null);
   const [searchedBlock, setSearchedBlock] = useState(null);
   const [searchBlock, setSearchBlock] = useState('');
-  const [showCurrentBlock, setShowCurrentBlock] = useState(true); // Indicates whether to show current or searched block
+  const [showCurrentBlock, setShowCurrentBlock] = useState(true); 
   const apiUrl = 'https://api-testnet.polygonscan.com/api';
   const apiKey = 'UM3TQHFPZHVJ488EGRZZRW521AJNJX348Z';
   const module = 'proxy';
 
   useEffect(() => {
     if (showCurrentBlock) {
-      // Fetch the details of the current block when the component loads
       const action = 'eth_blockNumber';
       const url = `${apiUrl}?module=${module}&action=${action}&apikey=${apiKey}`;
       axios
@@ -46,20 +45,20 @@ function BlockList({ onSelectBlock }) {
   const handleSearch = () => {
     const hexBlockNumber = searchBlock.trim();
     if (hexBlockNumber !== '') {
-      setShowCurrentBlock(false); // Switch to showing searched block
+      setShowCurrentBlock(false); 
       fetchBlockDetails(hexBlockNumber, setSearchedBlock);
     }
   };
 
   const handleShowCurrent = () => {
-    setShowCurrentBlock(true); // Switch to showing current block
-    setSearchBlock(''); // Clear the search input when showing the current block
-    setSearchedBlock(null); // Clear the searched block info
+    setShowCurrentBlock(true); 
+    setSearchBlock(''); 
+    setSearchedBlock(null); 
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    handleSearch(); // Call the search function when the form is submitted
+    e.preventDefault();
+    handleSearch(); 
   };
 
   return (

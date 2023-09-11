@@ -4,7 +4,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className ="App">
+    <div className ="Main">
+    <div className = "top">
+    <h1>Blockchain Explorer</h1>
+    </div>
+    <div className = "App">
     <ul className="circles">
             <li></li>
             <li></li>
@@ -17,8 +21,10 @@ function App() {
             <li></li>
             <li></li>
     </ul>
-      <h1>Blockchain Explorer</h1>
+    <div>
       <BlockList/>
+    </div>
+    </div>
     </div>
   );
 }
