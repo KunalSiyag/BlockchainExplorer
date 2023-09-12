@@ -1,13 +1,9 @@
 import React from 'react';
 import BlockList from './Components/BlockList.jsx';
 import './App.css';
-
 function App() {
   return (
     <div className ="Main">
-    <div className = "top">
-    <h1>Blockchain Explorer</h1>
-    </div>
     <div className = "App">
     <ul className="circles">
             <li></li>
